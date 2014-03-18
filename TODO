@@ -2,5 +2,5 @@
 
 find . -type f | \
 grep -v TODO | \
-xargs \egrep --color=auto -nIH "\<(TODO|FIXME|REMOVEME|XXX|REVISIT)\>"
+xargs egrep --color=auto -nIH "\<(TODO|FIXME|REMOVEME|XXX|REVISIT)\>"
 

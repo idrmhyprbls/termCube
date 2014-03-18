@@ -4,9 +4,9 @@
 
 DEBUG=0  # If the window crashes immediately set this
 
-if [ -f cursesDemoLauncher ] ; then
+if [ -f cursesDemoLauncher.py ] ; then
   LAUNCHER=cursesDemoLauncher.py
-elif [ -f demos/cursesDemoLauncher ] ; then
+elif [ -f demos/cursesDemoLauncher.py ] ; then
   LAUNCHER=demos/cursesDemoLauncher.py
 else
   echo "$0: Could not find cursesDemoLauncher.py"

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Curses demo. Not meant to be clean, rather exploratory."""
+"""Curses demo. Not clean, rather exploratory. NOT a termCube example!"""
 
 from       __future__ import print_function, division
 from       random     import randint

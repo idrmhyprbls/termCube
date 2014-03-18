@@ -20,6 +20,12 @@ Version
 
 !!! PRE-ALPHA !!!
 
+Elements
+========
+
+cursesDemo: Learning curses..NOT a demo of termCube capability!
+TODO
+
 Dependencies (& Thanks)
 ========
 
@@ -37,7 +43,7 @@ Inspiration
 Development environment
 ========
 
-  * Linux  (2.6)
+  * Linux  (Kernel 2.6)
   * Python (2.6+)
   * xterm  (xterm/gnome-terminal)
   * sh     (bash)
