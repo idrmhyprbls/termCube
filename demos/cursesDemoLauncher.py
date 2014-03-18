@@ -11,7 +11,7 @@ from __future__ import print_function
 import sys
 from subprocess import call
 from time import sleep
-#from pudb import set_trace; set_trace()
+#from pudb import set_trace; set_trace()  # To step though whole program
 
 if __name__ == '__main__':
     ARGS = sys.argv[1:]
@@ -23,7 +23,4 @@ if __name__ == '__main__':
         print(__file__ + ": Exiting...", file=sys.stderr)
         if 'xterm' in ARGS:
             sleep(3)
-    except:
-        print(__file__ + ": Unhandled exception, re-raising!", file=sys.stderr)
-        raise
 

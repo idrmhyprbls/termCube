@@ -7,12 +7,14 @@ Coding Standards
 Naming
 --------
 
-* Module: Camelcase, lower first letter
-* Global: Uppercase, _ separated
-* Local: Lowercase, _ separated
-* Local: Single letter only for indexes or intermediates
-* Function: Lowercase, _ separated
-* Class: Camelcase, uppercase first letter
+* Modules: Camelcase, lower first letter
+* Help Files: Uppercase, _ separated
+* Regular Files: Lowercase, _ separated
+* Globals: Uppercase, _ separated
+* Locals: Lowercase, _ separated
+* Locals: Single letter only for indexes or intermediates
+* Functions: Lowercase, _ separated
+* Classs: Camelcase, uppercase first letter
 
 Strings
 --------
