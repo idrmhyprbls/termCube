@@ -17,7 +17,7 @@ Naming
 Strings
 --------
 
-* Docstrings in """s
+* Docstrings in """
 * Multiline comments and strings in "
 * Anything argument or variable like in '
 
