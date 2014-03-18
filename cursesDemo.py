@@ -13,7 +13,7 @@ try:
 except ImportError:
     from   pdb        import set_trace
 
-MIN_SLEEP = 1/1000000.
+MIN_SLEEP = 1/100000.
 
 def example(window):
     t0 = time()
