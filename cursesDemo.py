@@ -13,6 +13,8 @@ try:
 except ImportError:
     from   pdb        import set_trace
 
+MIN_SLEEP = 1/1000000.
+
 def example(window):
     t0 = time()
     tot = 0
@@ -105,7 +107,7 @@ def example(window):
                 win3.move(0, 0)
         win3.noutrefresh()
 
-        sleep(1/1000000.)
+        sleep(MIN_SLEEP)
         curses.doupdate()  # Perform refreshes
 
 def main():
