@@ -1,6 +1,10 @@
 #!/bin/bash
+#
 # Launch the cursesDemo.py in a custom xterm window (via cursesDemoLauncher.py
 # which allows catching SyntaxError's)
+#
+# Usage
+# /termCube/demos $ ./cursesDemoLauncher
 
 DEBUG=0  # If the window crashes immediately set this
 

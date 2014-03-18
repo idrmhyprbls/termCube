@@ -1,32 +1,71 @@
 #!/usr/bin/env python
-"""Curses demo. Not clean, rather exploratory. NOT a termCube example!"""
+# -*- coding: utf-8 -*-
+"""Curses demo. Not clean, rather exploratory. NOT a termCube example!
 
-from       __future__ import print_function, division
-from       random     import randint
-from       string     import digits, letters, uppercase
-from       time       import time, sleep
-from       sys        import stderr, argv
-from       traceback  import print_exc
-import     curses
+Contents
+--------
+
+_Imports_ 
+_Metadata_
+_Globals_         
+_Classes_
+_Functions_ __main_
+_Execution_
+
+Usage
+--------
+
+/termCube/demos $ ./cursesDemoLauncher  # Using XTerm launcher
+/termCube/demos $ python -m cursesDemoLauncher  # Using python launcher
+/termCube/demos $ python -m cursesDemo  # Using python, ensure large enough xterm win
+
+"""
+
+########################_Imports_##############################################
+
+from     __future__ import print_function, division
+from     random     import randint
+from     string     import digits, letters, uppercase
+from     time       import time, sleep
+from     sys        import stderr, argv
+from     traceback  import print_exc
+import   curses
 try:
-    from   pudb       import set_trace  # See README
+    from pudb       import set_trace  # See README
 except ImportError:
-    from   pdb        import set_trace
+    from pdb        import set_trace
+
+########################_Metadata_#############################################
+
+__creator__   = "IDrmHyprbls"
+__project__   = "https://github.com/idrmhyprbls/termCube"
+__author__    = "https://github.com/idrmhyprbls/termCube/blob/master/COPYRIGHT.md"
+__copyright__ = __author__
+__license__   = "https://github.com/idrmhyprbls/termCube/blob/master/LICENSE.md"
+__version__   = "See <%s>." % __project__
+
+########################_Globals_##############################################
 
 MIN_SLEEP = 1/100000.
+
+########################_Functions_############################################
 
 def example(window):
     t0 = time()
     tot = 0
     mid, mx, my, mz, mbstate = 0, 0, 0, 0, 0
     ymax, xmax = window.getmaxyx()
-    window.timeout(0)  # Nonblocking gets, 0 in ms
+
+    # Win1 Drawing text once
+    win1 = window.subwin(0, 0)
     try:
-        window.addch(ymax-7, 24, curses.ACS_LARROW)
+        win1.addch(ymax-10, 24, curses.ACS_LARROW)
     except:
-        window.move(0, 0)
-    window.hline(ymax-7, 25, curses.ACS_HLINE, 10)
-    window.addstr(ymax-7, 36, "click this box, type, or press H, or Q")
+        win1.move(0, 0)
+    win1.hline(ymax-10, 25, curses.ACS_HLINE, 10)
+    win1.addstr(ymax-10, 36, "click this box, type, or press H, or Q")
+    win1.vline(ymax-9, 54, curses.ACS_VLINE, 2)
+    win1.addch(ymax-7, 54, curses.ACS_DARROW)
 
     # Window 2
     win2 = curses.newwin(12, 21, ymax-13, 1)
@@ -75,10 +114,10 @@ def example(window):
 
         # Window 1
         try:
-            window.addch(y, x, c)  # Totally unbuffered print
+            win1.addch(y, x, c)  # Totally unbuffered print
         except:
-            window.move(0, 0)
-        window.noutrefresh()  # Mark for update
+            win1.move(0, 0)
+        win1.noutrefresh()  # Mark for update
 
         # Window 2
         ylst, xlst = curses.getsyx()
@@ -125,6 +164,7 @@ def main():
         curses.cbreak()                 # Don't wait for <Enter>
         window.keypad(1)                # Use special char values
         window.nodelay(1)               # Nonblocking getch/getstr
+        window.timeout(0)               # Nonblocking gets, 0 in ms
         window.border()                 # Or box on edges
         window.leaveok(0)               # Virtual screen cursor after update
         curses.curs_set(0)              # Invisible curser
@@ -138,7 +178,9 @@ def main():
         curses.echo()
         curses.endwin()
 
-def _main(args):
+# __main_
+def _main(args):  
+    """main() handler."""
     try:
         main()
     except SystemExit as e:
@@ -171,6 +213,8 @@ def _main(args):
         print(__file__ + ": Exiting...", file=stderr)
         curses.napms(750)
         raise SystemExit(None)
+
+########################_Execution_############################################
 
 if __name__ == '__main__':
     _main(argv[1:])

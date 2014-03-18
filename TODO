@@ -1,4 +1,6 @@
 #!/bin/bash
+# Searches project for TODO-like statements. Was going to be a markdown file
+# but instead chose to implement this as a search utility and add a /GOALS.md.
 
 find . -type f | \
 grep -v TODO | \

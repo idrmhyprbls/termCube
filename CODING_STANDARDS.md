@@ -19,6 +19,7 @@ Naming
 Strings
 --------
 
+* Text (line) width of 80 chars, but longer if offers better readability, e.g. long strings
 * Docstrings in """
 * Multiline comments and strings in "
 * Anything argument or variable like in '

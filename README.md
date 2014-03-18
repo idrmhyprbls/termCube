@@ -1,19 +1,22 @@
 termCube
 ========
 
-A terminal-based NxNxN cube game (curses speedsolving/speedcubing)
+A terminal-based NxNxN cube game (curses speedsolving/speedcubing).
+
+NOTE: This is an in-progress, hobby project with flexible goals/end-dates.
 
 Purpose
 ========
 
-To enjoy speed-cubing via a fast, clean, simple, terminal-based-GUI game
+To enjoy speed-cubing via a fast, clean, simple, terminal-based-GUI game.
 
-Personally,
-  1. To learn git (commands, website, explore other projects, collaboration, etc) 
-  2. To explore python curses (fast screen printing, mouse control, keyboard input, and windows) 
-  3. To better own python project management
-  4. To use numpy for (probably) no good reason
-  5. To attack a problem many (52 pages of links) have so easily tackled before, but in a (probably) slower, uglier, and dirtier way
+And personally for a lurning experience, in order to:
+
+  1. Learn git (commands, website, explore other projects, collaboration, etc) 
+  2. Explore python curses (fast screen printing, mouse control, keyboard input, and windows) 
+  3. Better own python project management
+  4. Use numpy for no exceedingly good reason
+  5. Attack a problem many have so easily tackled before, but in a (probably) slower, uglier, and dirtier way
 
 Version
 ========
@@ -39,6 +42,7 @@ Inspiration
 ========
 
   * [term2048](TODO) for its simplicity and funicity
+TODO
 
 Development environment
 ========

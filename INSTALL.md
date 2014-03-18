@@ -3,8 +3,7 @@ Install
 
 No install required
 
-To run a Curses Demo
+Usage
 --------
-
-$ ./demos/cursesDemoLauncher
+Please see docstrings of any python module.
 
