@@ -1,0 +1,26 @@
+#!/bin/bash
+# Launch the cursesDemo.py in a custom xterm window (via cursesDemoLauncher.py
+# which allows catching SyntaxError's)
+xterm +sb +hold +aw -geometry 165x45 -bg black -fg green +ah +bc +ls -cr yellow +uc \
+  -T "Term Cube" \
+  -xrm "XTerm*vt100.pointerShape:           left_ptr" \
+  -xrm "XTerm*vt100.pointerColor:           green" \
+  -xrm "XTerm*vt100.pointerColorBackground: black" \
+  -e python -m cursesDemoLauncher xterm &
+
+# +sb                    # No scrollbar
+# +hold                  # Immediately destroy
+# +aw                    # No autowrap
+# -geometry 165x45       # Window (Host on RFTD is 166x50 max)
+# -bg black              # Back
+# -fg green              # Front
+# +ah                    # Highlighting based on focus
+# +bc                    # No cursor blinking
+# +ls                    # Not login shell
+# -cr yellow             # Text cursor
+# +uc                    # Cursor is a box
+# -T Term_Cube           # Title
+# -xrm ...               # Resource string
+#      pointerShape      # crosshair, left_ptr, xterm, top_left_arrow
+# -e ./displayControl.py # Run
+
