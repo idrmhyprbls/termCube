@@ -2,7 +2,8 @@
 # Searches project for TODO-like statements. Was going to be a markdown file
 # but instead chose to implement this as a search utility and add a /GOALS.md.
 
-find . -type f | \
-grep -v TODO | \
-xargs egrep --color=auto -nIH "\<(TODO|FIXME|REMOVEME|XXX|REVISIT)\>"
+FINDSTR="\<(TODO|FIXME|REMOVEME|XXX|REVISIT)\>"
+OMITFILE="(\<TODO\>|templates/main.py)"
+
+find . -type f | egrep -v $OMITFILE | xargs egrep --color=auto -nIH $FINDSTR
 

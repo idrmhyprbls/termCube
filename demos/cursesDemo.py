@@ -149,7 +149,8 @@ def example(window):
         sleep(MIN_SLEEP)
         curses.doupdate()  # Perform refreshes
 
-def main():
+def _main():  # __main_
+    """Program main function."""
     try:
         window = curses.initscr()       # Window object
         window.clear()                  # Erase and repaint on update
@@ -178,11 +179,11 @@ def main():
         curses.echo()
         curses.endwin()
 
-# __main_
-def _main(args):  
-    """main() handler."""
+# __main_exc_handler_
+def _main_exc_handler(args):  
+    """_main() exception handler."""
     try:
-        main()
+        _main()
     except SystemExit as e:
         if not e or str(e).lower() == 'none':
             pass
@@ -217,5 +218,5 @@ def _main(args):
 ########################_Execution_############################################
 
 if __name__ == '__main__':
-    _main(argv[1:])
+    _main_exc_handler(argv[1:])
 
