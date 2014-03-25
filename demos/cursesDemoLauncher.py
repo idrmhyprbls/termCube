@@ -32,7 +32,10 @@ import sys
 import os
 from   subprocess  import call
 from   time        import sleep
+
 #from  pudb import set_trace;    set_trace()  # To step though whole program
+
+from   cursesDemo  import _main_exc_handler
 
 ########################_Metadata_#############################################
 #
@@ -51,7 +54,6 @@ ARGS = sys.argv[1:]
 #
 if __name__ == '__main__':
     try:
-        from cursesDemo import _main
         _main_exc_handler(ARGS)
     except SyntaxError as e:
         print(__file__ + ": Syntax error: \"%s\" (%s)" % (str(e), e.__doc__), file=sys.stderr)
