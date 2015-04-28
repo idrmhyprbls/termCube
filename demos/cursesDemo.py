@@ -98,6 +98,8 @@ def example(window):
         y = randint(1, randint(1, ymax - 2 - 12))
         c = ord('#')
 
+        # window.erase() # IF YOU WANT TO REDRAW DON'T USE CLEAR!
+
         # Input
         getch = window.getch() 
         if getch == curses.KEY_MOUSE or getch == ord('H'):
